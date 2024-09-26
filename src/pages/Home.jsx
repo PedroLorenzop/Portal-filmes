@@ -7,7 +7,8 @@ export default function Home(){
  
 
     return(
-       <CardContainer titulo = "Filmes Antigos">
+        <>
+            <CardContainer titulo = "Filmes Antigos">
             {
                 movies
                 .filter(filme => filme.ano_lancamento < 2000)
@@ -15,7 +16,16 @@ export default function Home(){
                     <MovieCard key={filme.id} {...filme}/>
                 ))
             }
-       </CardContainer>
+            </CardContainer>
+            <CardContainer titulo="Filmes nota max">
+                {
+                    movies.filter(filme => filme.avaliacao > 9)
+                    .map(filme => (
+                        <MovieCard key={filme.id} {...filme}/>
+                    ))
+                }
+            </CardContainer>
+        </>
        
     )
 }
