@@ -23,10 +23,14 @@ export default function MovieListPage(){
             onChange={handleSearch}
             />
             {
+                filmeFiltrados.length > 0 ?
+
                 filmeFiltrados
                 .map( filme => (
                     <MovieCard key={filme.id} {...filme}/>
                 ))
+                :
+                <p>Filme nnão encontrado</p>
             }
         </>
     )

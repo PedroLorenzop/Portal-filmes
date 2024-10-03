@@ -7,6 +7,7 @@ export default function Home(){
  
 
     return(
+        <>
        <CardContainer titulo = "Filmes Antigos">
             {
                 movies
@@ -16,6 +17,16 @@ export default function Home(){
                 ))
             }
        </CardContainer>
+       <CardContainer titulo="Filmes Bem Avaliados">
+        {
+            movies
+            .filter(filme =>filme.Avaliados > 9)
+            .map(filme => (
+                <MovieCard key={filme.id} {...filme}/>
+            ))
+        }
+       </CardContainer>
+       </>
        
     )
 }
