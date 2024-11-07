@@ -5,7 +5,7 @@ export default function GenreListPage() {
     { id: 28, name: "Ação" },
     { id: 35, name: "Comédia" },
     { id: 18, name: "Drama" },
-    // Adicione mais gêneros conforme necessário
+  
   ];
 
   return (

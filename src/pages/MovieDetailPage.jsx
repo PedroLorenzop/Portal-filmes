@@ -10,7 +10,7 @@ export default function MovieDetailPage() {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        // Fetch dos detalhes do filme
+      
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=be1cd654ab3efabd5bf7efa1a9b3170a&language=pt-BR`
         );
@@ -23,7 +23,7 @@ export default function MovieDetailPage() {
 
     const fetchMovieTrailer = async () => {
       try {
-        // Fetch dos vídeos do filme (trailers e outros)
+   
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${id}/videos?api_key=be1cd654ab3efabd5bf7efa1a9b3170a&language=pt-BR`
         );

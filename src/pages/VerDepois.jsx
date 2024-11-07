@@ -23,8 +23,8 @@ export default function WatchLaterMoviesPage() {
   }, []);
 
   const handleRemove = (movieId) => {
-    removeFromWatchLater(movieId); // Remove o filme da lista "Ver Depois" no localStorage
-    setMovies(movies.filter(movie => movie.id !== movieId)); // Atualiza a lista na UI
+    removeFromWatchLater(movieId); 
+    setMovies(movies.filter(movie => movie.id !== movieId)); 
   };
 
   if (movies.length === 0) return <p>Nenhum filme na lista para ver depois.</p>;
@@ -39,7 +39,7 @@ export default function WatchLaterMoviesPage() {
             id={movie.id} 
             titulo={movie.title} 
             imagem_destaque={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-            onRemove={() => handleRemove(movie.id)}  // Adiciona o botão de remover
+            onRemove={() => handleRemove(movie.id)}  
           />
         ))}
       </div>

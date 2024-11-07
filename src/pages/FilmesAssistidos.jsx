@@ -23,8 +23,8 @@ export default function WatchedMoviesPage() {
   }, []);
 
   const handleRemove = (movieId) => {
-    removeFromWatched(movieId); // Remove o filme da lista assistida no localStorage
-    setMovies(movies.filter(movie => movie.id !== movieId)); // Atualiza a lista na UI
+    removeFromWatched(movieId); 
+    setMovies(movies.filter(movie => movie.id !== movieId)); 
   };
 
   if (movies.length === 0) return <p>Nenhum filme assistido ainda.</p>;

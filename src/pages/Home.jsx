@@ -30,7 +30,7 @@ export default function Home() {
     fetchMovies();
   }, []);
 
-  // Fetch de filmes recomendados
+
   useEffect(() => {
     const fetchRecommendedMovies = async () => {
       const movies = await getRecommendedMovies();
@@ -41,16 +41,16 @@ export default function Home() {
   }, []);
 
   const handleAddToWatched = (movieId) => {
-    addToWatched(movieId); // Adiciona o filme à lista de assistidos
+    addToWatched(movieId); 
   };
 
   const handleAddToWatchLater = (movieId) => {
-    addToWatchLater(movieId); // Adiciona o filme à lista "Ver Depois"
+    addToWatchLater(movieId); 
   };
 
   return (
     <div className="p-4">
-      {/* Seção de Recomendados para Você */}
+      {}
       <h1 className="text-2xl font-bold mb-4">Recomendados para Você</h1>
       <div className="flex space-x-4 overflow-x-auto pb-4">
         {recommendedMovies.length > 0 ? (
@@ -62,7 +62,7 @@ export default function Home() {
               imagem_destaque={`https://image.tmdb.org/t/p/w500${filme.poster_path}`}
               onWatched={() => handleAddToWatched(filme.id)}
               onWatchLater={() => handleAddToWatchLater(filme.id)}
-              showRemoveButton={false}  // Não exibe o botão de remover
+              showRemoveButton={false}  
             />
           ))
         ) : (
@@ -70,7 +70,7 @@ export default function Home() {
         )}
       </div>
 
-      {/* Seção de Filmes Populares */}
+      {}
       <h1 className="text-2xl font-bold mb-4">Filmes Populares</h1>
       <div className="flex space-x-4 overflow-x-auto pb-4">
         {popularMovies.map((filme) => (
@@ -81,12 +81,12 @@ export default function Home() {
             imagem_destaque={`https://image.tmdb.org/t/p/w500${filme.poster_path}`}
             onWatched={() => handleAddToWatched(filme.id)}
             onWatchLater={() => handleAddToWatchLater(filme.id)}
-            showRemoveButton={false}  // Não exibe o botão de remover
+            showRemoveButton={false}  
           />
         ))}
       </div>
 
-      {/* Seção de Próximos Lançamentos */}
+      {}
       <h1 className="text-2xl font-bold mb-4">Próximos Lançamentos</h1>
       <div className="flex space-x-4 overflow-x-auto pb-4">
         {upcomingMovies.map((filme) => (
@@ -97,7 +97,7 @@ export default function Home() {
             imagem_destaque={`https://image.tmdb.org/t/p/w500${filme.poster_path}`}
             onWatched={() => handleAddToWatched(filme.id)}
             onWatchLater={() => handleAddToWatchLater(filme.id)}
-            showRemoveButton={false}  // Não exibe o botão de remover
+            showRemoveButton={false}  
           />
         ))}
       </div>
